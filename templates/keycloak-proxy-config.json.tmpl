@@ -1,0 +1,28 @@
+{
+    "target-url": "{{getv "/self/service/metadata/targeturl"}}",
+    "send-access-token": true,
+    "bind-address": "0.0.0.0",
+    "http-port": "8080",
+    "applications": [
+        {
+            "base-path": "/",
+            "error-page": "/error.html",
+            "adapter-config": {
+                "realm": "{{getv "/self/service/metadata/keycloak-realm"}}",
+                "resource": "{{getv "/self/service/metadata/keycloak-clientid"}}",
+                "auth-server-url": "{{getv "/self/service/metadata/keycloak-url"}}",
+                "principal-attribute": "name",
+                "credentials": {
+                    "secret": "{{getv "/self/service/metadata/keycloak-secret"}}"
+                }
+            }
+            ,
+            "constraints": [
+                {
+                    "pattern": "/*",
+                    "authenticate": "true"
+                }
+            ]
+        }
+    ]
+}
