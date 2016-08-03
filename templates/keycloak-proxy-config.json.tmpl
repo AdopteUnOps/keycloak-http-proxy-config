@@ -7,22 +7,8 @@
         {
             "base-path": "/",
             "error-page": "/error.html",
-            "adapter-config": {
-                "realm": "{{getv "/self/service/metadata/keycloak-realm"}}",
-                "resource": "{{getv "/self/service/metadata/keycloak-clientid"}}",
-                "auth-server-url": "{{getv "/self/service/metadata/keycloak-url"}}",
-                "principal-attribute": "name",
-                "credentials": {
-                    "secret": "{{getv "/self/service/metadata/keycloak-secret"}}"
-                }
-            }
-            ,
-            "constraints": [
-                {
-                    "pattern": "/*",
-                    "authenticate": "true"
-                }
-            ]
+            "adapter-config": {{getv "/self/service/metadata/adapter-config"}},
+            "constraints": {{getv "/self/service/metadata/constraints"}}
         }
     ]
 }

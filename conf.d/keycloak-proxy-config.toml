@@ -3,8 +3,6 @@ src="keycloak-proxy-config.json.tmpl"
 dest="/opt/jboss/keycloak-proxy-config/config.json"
 keys= [
     "/self/service/metadata/targeturl",
-    "/self/service/metadata/keycloak-realm",
-    "/self/service/metadata/keycloak-clientid",
-    "/self/service/metadata/keycloak-url",
-    "/self/service/metadata/keycloak-secret"
+    "/self/service/metadata/adapter-config",
+    "/self/service/metadata/constraints",
 ]
