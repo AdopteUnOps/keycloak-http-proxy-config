@@ -1,6 +1,6 @@
 [template]
 src="keycloak-proxy-config.json.tmpl"
-dest="/opt/jboss/keycloak-proxy-config/config.json"
+dest="/opt/jboss/conf/proxy.json"
 keys= [
     "/self/service/metadata/targeturl",
     "/self/service/metadata/adapter-config",
